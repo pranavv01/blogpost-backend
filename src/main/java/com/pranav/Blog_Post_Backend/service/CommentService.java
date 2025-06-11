@@ -1,2 +1,7 @@
-package com.pranav.Blog_Post_Backend.service;public class CommentService {
+package com.pranav.Blog_Post_Backend.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CommentService {
 }

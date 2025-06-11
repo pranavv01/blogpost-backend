@@ -1,17 +1,27 @@
-package com.pranav.Blog_Post_Backend.model;
+package com.pranav.Blog_Post_Backend.entity;
 
 import jakarta.persistence.Entity;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Id;
 
-@Component
 @Entity
 public class Comment {
+    @Id
+    private Long id;
     private String comment;
     private int date;
 
-    public Comment(String comment, int date){
+    public Comment(Long id, String comment, int date){
+        this.id = id;
         this.comment = comment;
         this.date = date;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getComment() {

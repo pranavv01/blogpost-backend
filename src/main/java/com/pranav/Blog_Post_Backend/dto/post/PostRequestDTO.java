@@ -1,2 +1,4 @@
-package com.pranav.Blog_Post_Backend.dto.post;public class PostRequestDTO {
+package com.pranav.Blog_Post_Backend.dto.post;
+
+public class PostRequestDTO {
 }

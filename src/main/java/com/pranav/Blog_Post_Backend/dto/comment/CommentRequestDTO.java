@@ -1,2 +1,4 @@
-package com.pranav.Blog_Post_Backend.dto.comment;public class CommentRequestDTO {
+package com.pranav.Blog_Post_Backend.dto.comment;
+
+public class CommentRequestDTO {
 }

@@ -1,17 +1,32 @@
-package com.pranav.Blog_Post_Backend.model;
+package com.pranav.Blog_Post_Backend.entity;
 
 import jakarta.persistence.Entity;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Component
 @Entity
+@Table(name = "users")
 public class User {
+    @Id
+    private Long id;
     private String name;
     private String email;
+    public User(){
 
-    public User(String name, String email) {
+    }
+
+    public User(Long id, String name, String email) {
+    this.id = id;
     this.name = name;
     this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
