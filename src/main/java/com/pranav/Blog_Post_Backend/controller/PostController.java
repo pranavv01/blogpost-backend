@@ -1,22 +1,32 @@
 package com.pranav.Blog_Post_Backend.controller;
 
+import com.pranav.Blog_Post_Backend.entity.Post;
+import com.pranav.Blog_Post_Backend.service.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping
+@RequestMapping("/posts")
 public class PostController {
+    @Autowired
+    PostService postService;
 
-    @PostMapping("/posts")
-    public void createPost() {
+    @PostMapping
+    public List<Post> createPost(@RequestBody List<Post> posts) {
         // logic here
+        return postService.createPost(posts);
+
     }
 
-    @GetMapping("/posts")
-    public void listPost() {
+    @GetMapping
+    public List<Post> listPost() {
         // logic here
+        return postService.listPost();
     }
 
-    @GetMapping("/post/{id}")
+    @GetMapping("/{id}")
     public void getPostByID(@PathVariable int id) {
         // logic here
     }

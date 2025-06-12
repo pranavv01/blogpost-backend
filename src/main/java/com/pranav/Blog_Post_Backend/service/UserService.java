@@ -7,15 +7,23 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UserService {
     @Autowired
     UserRepository userRepository;
 
 
-    public List<User> createUser(){
-        List <User> userList = new ArrayList<>();
-        userList.add(new User(1L, "Pranav Anand", "Pranavvanandd@gmail.com"));
+    public List<User> createUser(List<User> userList){
         return userRepository.saveAll(userList);
+    }
+
+    public List<User> getUser(){
+        return userRepository.findAll();
+    }
+
+    public Optional<User> getUserByID(Long id){
+        return userRepository.findById(id);
     }
 }

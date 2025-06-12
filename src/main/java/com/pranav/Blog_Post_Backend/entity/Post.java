@@ -1,17 +1,36 @@
 package com.pranav.Blog_Post_Backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+import java.time.LocalDate;
 
 @Entity
 public class Post {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postid;
     private String title;
     private String content;
-    private int date;
 
-    public Post(Long postid, String title, String content, int date) {
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;
+
+    public Post(){
+
+    }
+
+    public Post(String title, String content, LocalDate date){
+        this.title = title;
+        this.content = content;
+        this.date = date;
+
+    }
+
+    public Post(Long postid, String title, String content, LocalDate  date) {
         this.postid = postid;
         this.title = title;
         this.content = content;
@@ -42,11 +61,11 @@ public class Post {
         this.content = content;
     }
 
-    public int getDate() {
+    public LocalDate  getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(LocalDate  date) {
         this.date = date;
     }
 }
