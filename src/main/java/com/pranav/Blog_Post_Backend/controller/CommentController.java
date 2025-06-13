@@ -1,5 +1,6 @@
 package com.pranav.Blog_Post_Backend.controller;
 
+import jakarta.persistence.OneToMany;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +15,7 @@ public class CommentController {
     public void addComment(){
 
    }
+   @OneToMany
    @GetMapping("/comments/byPost/{postId}")
    public void getAllComment(){
 
