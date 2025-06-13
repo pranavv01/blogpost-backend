@@ -2,6 +2,8 @@ package com.pranav.Blog_Post_Backend.controller;
 
 import com.pranav.Blog_Post_Backend.entity.Post;
 import com.pranav.Blog_Post_Backend.service.PostService;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,15 +29,16 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    public void getPostByID(@PathVariable int id) {
+    public List<Post> getPostByID(@PathVariable Long postid) {
         // logic here
+        return postService.getPostById(postid);
     }
-
+    @OneToMany
     @GetMapping("/posts/byUser/{userId}")
     public void getPostByUser(@PathVariable int userId) {
         // logic here
     }
-
+    @ManyToOne
     @GetMapping("/posts/byCategory/{categoryId}")
     public void getAllPostCategory(@PathVariable int categoryId) {
         // logic here
