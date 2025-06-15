@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CommentController {
     @PostMapping("/comments")
     public void addComment(){
-
    }
    @OneToMany
    @GetMapping("/comments/byPost/{postId}")
