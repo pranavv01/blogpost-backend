@@ -17,10 +17,9 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
-    @PostMapping
-    public List<Comment> addComment(@RequestBody Comment comments){
-        return commentService.getComment((comments));
-   }
+//    @PostMapping
+//    public List<Comment> addComment(@RequestBody Comment comments){
+//   }
 
    @GetMapping("/comments/byPost/{postId}")
    public void getAllComment(){
