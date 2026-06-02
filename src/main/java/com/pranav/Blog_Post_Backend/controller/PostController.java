@@ -22,6 +22,7 @@ public class PostController {
 
     }
 
+    // get mapping 
     @GetMapping
     public List<Post> listPost() {
         // logic here
