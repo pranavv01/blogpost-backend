@@ -2,7 +2,7 @@ package com.pranav.Blog_Post_Backend.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+// controller
 @Controller
 @RequestMapping
 public class CategoryController {
