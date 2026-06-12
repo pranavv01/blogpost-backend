@@ -17,7 +17,7 @@ public class PostController {
 
     @PostMapping
     public List<Post> createPost(@RequestBody List<Post> posts) {
-        // logic here
+       
         return postService.createPost(posts);
 
     }
